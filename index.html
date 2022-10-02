@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+
+    <script>
+      function msg() {
+        alert("Hello JavaPoint");
+      }
+    </script>
+  </head>
+  <body>
+    <p>Welcome to JavaScript</p>
+    <form>
+      <!-- <input type="button" value="click" onclick="msg()" /> -->
+    </form>
+
+    <!-- <ul>
+        <li class="cl pi">list 1</li>
+        <li id="second">list 2</li>
+        <li class="cl">list 3</li>
+        <li class="cl pi">list 4</li>
+        <li class="cl">list 5</li>
+    </ul> -->
+
+    <!-- ex for how to select element by tag -->
+    <!-- 
+    <h2>Heading 1</h2>
+    <div id="dd">
+    <p>paragraph 1</p>
+    <h2>Heading 2</h2>
+    <p>paragraph 2</p>
+    <h2>Heading 3</h2>
+    <p>paragraph 3</p>
+</div> -->
+
+    <!-- use for query selector... -->
+
+    <!-- <h2 class="intro">Heading 1</h2>
+    <div id="div1">
+    <p class="intro">paragraph 1</p>
+    <h2 class="intro">Heading 2</h2>
+    <p>paragraph 2</p>
+    <h2>Heading 3</h2>
+    <p class="intro">paragraph 3</p>
+</div>  -->
+
+    <!-- FOR traversing element... -->
+
+    <!-- <h2>Heading</h2> -->
+    <!-- get parent in this -->
+    <!-- <ul>
+    <li id="intro">list 1</li>
+    <li>list 2</li>
+    <li>list 3</li>
+    <li>list 4</li>
+</ul> -->
+
+    <!-- get child in this -->
+    <!-- <ul  id="intro">
+    <li>list 1</li>
+    <li>list 2</li>
+    <li>list 3</li>
+    <li>list 4</li>
+</ul> -->
+
+    <!-- get siblings in this -->
+
+    <!-- <ul>
+    <li>list 1</li>
+    <li id="intro">list 2</li>
+    <li>list 3</li>
+    <li>list 4</li>
+</ul>
+
+
+<ul>
+    <li>list a</li>
+    <li>list b</li>
+    <li>list c</li>
+    <li>list d</li>
+</ul> -->
+
+    <!-- for InnerHTML -->
+
+    <!-- <div id="intro">
+    <p>Hello this is a p tag</p>
+</div> -->
+
+    <!-- For Create and Append the element -->
+
+    <!-- <div id="intro">
+    <p id="p1">Hello This is a p tag</p>  
+</div> -->
+
+    <!-- if we want add new list item in ul  // using 4 steps including append -->
+    <!-- 
+<ul id="lists">
+    <li>list 1</li>
+    <li>list 2</li>
+    <li>list 3</li>
+    <li>list 4</li>
+</ul> -->
+
+    <!-- But in some cases if we want to add new list item in some different position like -->
+    <!-- 
+ <ul id="lists">
+    <-- like here -->
+    <!-- <li>list 1</li> -->
+    <!-- like here -->
+    <!-- <li>list 2</li> -->
+    <!-- like here -->
+    <!-- <li>list 3</li> -->
+    <!-- like here -->
+    <!-- <li>list 4</li> -->
+    <!-- </ul>   -->
+
+    <!-- For removing child element using their parent element -->
+
+    <!-- <ul id="menu">
+    <li>Home</li>
+    <li>Product</li>
+    <li>About</li>
+ </ul> -->
+
+    <script>
+      // for removing any child elemet first select their parent & with the help of  this parent element  we can remove element
+
+      // if we want to remove Home content which is present in li under ul as parent so first select ul as parent then remove li
+
+      // let parent = document.getElementById("menu"); //selecting parent
+
+      //let elm = parent.firstElementChild;  // with the help of parent track child element & removed
+      // parent.removeChild(elm);
+
+      //let elm1 = parent.firstElementChild.nextElementSibling; // if i want to remove product the i wil use this
+      //parent.removeChild(elm1);
+
+      // if want to remove entire child of body i.e ul
+      // document.body.removeChild(parent);  // select body then remove child
+      //
+    </script>
+
+    <!-- ------------------------------------------------------------------------------>
+    <!-- Clone Element  -->
+    <!--  clone means   copy elements  -->
+
+    <!-- <ul id="menu">
+    <li>Home</li>
+    <li>Services</li>
+    <li>About</li>
+    <li>Contact</li>
+</ul> -->
+
+    <script>
+      //let menu = document.getElementById("menu");
+      //let cloneElm = menu.cloneNode();   // if i not writing anything  here () then it only copy the parent not their child for ex. this copy only ul element not All li elements present under the ul
+      // console.log(cloneElm);
+
+      // document.body.appendChild(cloneElm);
+
+      //let cloneElm1 = menu.cloneNode(true); //
+      // if i  writing true in bracket  here () then it copy the parent &  their child also for ex. this copy  ul element &  All li elements present under the ul
+      //console.log(cloneElm1);
+    </script>
+
+    <!-- --------------------------------------------------------- -->
+
+    <!-- Replace elements in JS -->
+    <!-- <ul id="menu">
+    <li>Home</li>
+    <li>Product</li>
+    <li>About Us</li>
+</ul> -->
+
+    <script>
+      // if i want to replace product with services then i will use this
+      //  for this first of all select thier parent elemment
+
+      let parent = document.getElementById("menu");
+
+      //  then create on li element services
+      let item = document.createElement("li");
+      // then add somethin is that li element
+      item.textContent = "services"; // succcesfull added
+
+      // then use replace property for this create one variable
+      // let replace = parent.firstElementChild.nextElementSibling;
+
+      // parent.replaceChild(item, replace); // succfull replace as services in place of prodduct..
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+
+    <!----------- Insert adjecent in HTML ------->
+    <!-- we can insert element in following positions -->
+
+    <!-- Beforebegining -->
+    <div id="intro">
+      <!-- Selected -->
+      <!-- Afterbegining -->
+      <!-- <h2>Heading</h2> -->
+      <!-- <p>This is a p tag</p> -->
+      <!-- BeforeEnd -->
+    </div>
+    <!-- AfterEnd -->
+
+    <script>
+      // let elm = document.getElementById("intro");
+
+      // let html = "<h1>New h1 tag</h1>"
+
+      // elm.insertAdjacentHTML('beforebegin',html); // for insert at before begining
+
+      // elm.insertAdjacentHTML('afterbegin',html);    // for insert at after begining
+
+      // elm.insertAdjacentHTML('beforeend',html);    // for insert at before end
+
+      // elm.insertAdjacentHTML('afterend',html);    // for insert at after end
+    </script>
+
+    <!---------------------------------------------------- -->
+
+    <!-- ---Changes in Attribute of HTML using JS ------>
+
+    <!-- <button id="btn">Send</button> -->
+
+    <!-- first of all select id or class then add some different attribute -->
+
+    <script>
+      // let btn = document.getElementById("btn");
+
+      // for add some attibutes we use setAttributes
+
+      // btn.setAttribute("name", "form1"); //for add name
+
+      // set is use for gave the attibute value which is present
+
+      // let val = btn.getAttribute("name"); // yes name attribute is present
+      // console.log(val);
+
+      //  if we want remove attribute then use removeAttribute
+      //let remove = btn.removeAttribute("name");
+
+      // to check whether this attribute are present or not then use hasAttribute
+      // let check = btn.hasAttribute("name");
+      // console.log(check); // if already present then return true
+      // let check1 = btn.hasAttribute("class");
+      // console.log(check1); // if not present then  return false
+    </script>
+
+    <!-- ---------------------------------------------------- -->
+
+    <!-- Change inline CSS style using JS -->
+
+    <!-- <button id="btn" name="form1">Send</button> -->
+
+    <script>
+      // let btn1 = document.getElementById("btn");
+
+      // btn.style.cssText = "background-color: red ; color: white;";
+      // OR using ste attributes
+      // btn.setAttribute('style' , 'color:red; background-color:yellow;')
+      // OR using individually styling
+      // btn.style.color = "white";
+      // btn.style.backgroundColor = "purple";
+    </script>
+
+    <!-- ------------------------------------------------------- -->
+    <!-- Get computed CSS using JS -->
+<!-- 
+    <button id="btn">send</button>
+
+    <style>
+      #btn {
+        background-color: red;
+        color: white;
+      }
+    </style> -->
+    <script>
+      // let btn1 = document.getElementById("btn");
+
+      // let css = getComputedStyle(btn);
+      // console.log(css);    // it gives all css property which is provide by dfault html
+      // console.log(css.color);  // gives color color property 
+      // console.log(css.background);   // gives which background color we used..?
+    // </script>
+
+    <!-- ----------------------------------------------------------------- -->
+
+    <!-- CSS classes in JS -->
+
+
+<!-- <style>
+.color{
+  background-color: red;
+  color: yellow;
+
+}
+.dim{
+  border: 1px solid green;
+  padding: 100px 150px;
+  margin: 50px;
+
+}
+</style>
+
+<div id="box" class="color ">
+  <p>This is dummy Text</p>
+</div> -->
+
+<script>
+  // let box = document.getElementById("box");
+  // console.log(box.className);  //---> check which class is present
+
+  // console.log(box.classList);  
+  //it gives like this-->['color', 'dim', value: 'color dim']
+
+  // if we check classes individualy then use for loop
+  // for(let css of box.classList){
+  //   console.log(css);
+  // }
+
+  
+  // for adding class
+  // box.className += " dim";
+
+  // also for adding class 
+  // box.classList.add("dim");
+
+  // for removing that class 
+  // box.classList.remove("dim");
+
+  // for replacing class
+  // box.classList.replace("color","dim")
+
+  // for class is contains or not will give o/p in boolean
+
+  // let result = box.classList.contains("dim");
+  //console.log(result) //---> it gives true
+
+  // let result1 = box.classList.contains("colors");
+  //console.log(result1) //---> it gives false
+
+  // toggle ---> means if class already exist then remove it & if not exist then add it automatically using toggle() method...
+  // box.classList.toggle("color");
+
+</script>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- Get Width and Height in JS -->.
+
+ <style>
+.color{
+  background-color: red;
+  color: yellow;
+
+}
+.dim{
+  border: 1px solid green;
+  padding: 100px;
+
+}
+</style>
+
+<!-- <div id="box" class="color dim">
+  <p>This is dummy Text</p>
+</div>  -->
+
+<script>
+  // let box = document.getElementById("box")
+
+  // let width = box.offsetWidth;
+  // let Height = box.offsetHeight;
+
+  // offset --> in offset includes padding & margin 
+  // client --> inclient includes only padding 
+
+  // console.log(width);   //---> o/p--->666
+  // console.log(Height);   //---> o/p--->253
+
+  
+  // let width1 = box.clientWidth;
+  // let Height1 = box.clientHeight;
+  // console.log(width1);   //---> o/p--->664
+  // console.log(Height1);   //---> o/p--->251
+
+</script>
+
+<!-- -------------------------------------------------------- -->
+
+<!-- DOM Events............ -->
+
+<!-- 
+  DOM events are actions that occures as a result of the user action or as result of state chnage of the elements of a DOM tree..
+
+  Example of HTML Events
+
+  # When user clicks the mouse 
+  # When a web page has loaded
+  # When an image has been loaded
+  # When the mouse moves over an element
+  # When an input field is changed
+  # When an HTML form is submitted 
+  # When a user strokes a key
+  
+ -->
+<!-- 
+ <button id="btn" onclick="btnClick()"> Click Me on Inline !</button>
+
+ <button id="btn1"> Click Me !</button>
+
+ <script>
+  function btnClick(){
+    alert("button was clicked!");
+  }
+
+  function btnClick1(){
+    alert("button was clicked once again!");
+  }
+
+  let btn = document.getElementById("btn");
+
+
+  btn1.addEventListener('click' , btnClick1)
+ </script> -->
+
+ <!-- OR------------------- -->
+
+ <!-- <button id="btn">Click me !</button> -->
+
+ <!-- <script>
+  let btn = document.getElementById("btn");
+
+  btn.addEventListener('click', function(){
+    // alert("button was clicked !");
+    console.log("button was clicked !");
+  });
+
+  
+  btn.addEventListener('mouseover', function(){
+    // alert("mouseover is activated !");
+    console.log("mouseover is activated !")
+  });
+
+  
+  btn.addEventListener('mouseout', function(){
+    // alert("mouseout is activated !");
+    console.log("mouseout is activated !")
+  }); 
+ </script>-->
+<!-- 
+ <button id="btn">Click me !</button>
+ <script>
+  let btn = document.getElementById("btn");
+
+  function click1(){
+    console.log("click1 is activated");
+  }
+
+  function click2(){
+    console.log("click2 is activated");
+  }
+
+  btn.addEventListener('click' , click1);
+  btn.addEventListener('click' , click2);
+
+  btn.removeEventListener('click' , click2);
+
+ </script> -->
+
+<!-- ----------------------------------------------------- -->
+
+ <!-- Mouse Events in JS -->
+
+<style>
+  #box{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+  }
+  #box1{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+  }
+  #box2{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+  }
+</style>
+
+<!-- <div id="box" onclick="fun()">Click</div> -->
+<br>
+ <!-- <div id="box1" oncontextmenu="fun1()">Right click</div>
+ <br>
+ <div id="box2" ondblclick="fun2()">Double click</div> -->
+
+ <!-- <div id="box" onmouseup="fun()">Click</div> -->
+ <!-- <div id="box" onmousedown="fun()">Click</div> -->
+ 
+ 
+ <script>
+   
+   
+     function fun(){
+       alert("Click event");
+     }
+  
+  function fun1(){
+    alert("right Click event");
+  }
+
+  function fun2(){
+    alert("double Click event");
+  }
+
+let box = document.getElementById("box");
+let box1 = document.getElementById("box1");
+let box2 = document.getElementById("box2");
+
+// -------------------------------------------------------------
+
+
+// // Key Down events(UP/DOWN)-------->
+
+// window.addEventListener('keydown' , checkKey);
+
+// function checkKey(event){
+//   console.log(event.key);
+// }
+
+
+
+// window.addEventListener('keyup' , checkKey);
+
+// function checkKey(event){
+//   console.log(event.key);
+// }
+
+ </script>
+ <!-- -->
+
+<!-- Scroll Events ------------------------------------------------>
+
+ <h1>Hello</h1>
+
+ <style>
+  body{
+    height: 2000px;
+  }
+ </style>
+
+ <script>
+//  in this scroll event he gives us how many times we scroll (up and down) but it takes all count(it may be up or down) & not specified when we scroll up & down
+
+  // window.addEventListener('scroll', function(){
+  //   console.log("scrolling...")
+  // })
+
+
+  // in this "wheel" event he also gives number of scroll counting but he specify properly it terms of up and down scroll so thats why we use "wheel" event 
+
+  /* In this "wheel" event we use two fucntion i.e 
+     deltaX----> Use for Horizontal scrolling
+     deltaY----> Use for Vertical scrolling
+  */
+  // window.addEventListener('wheel' ,function(event){
+  //   if(event.deltaY < 0){
+  //     console.log("scrolling Up...");
+  //   }
+  //   else if(event.deltaY > 0){
+  //     console.log("scrolling Down...");
+  //   }
+  // });
+
+
+  //  in this scroll event we have also one fucntion use for pixel that means we set scroll event upto perticuler pixel sixe..
+
+//   window.addEventListener('scroll' ,function(){
+//     if(window.pageYOffset > 150){
+//       document.body.style.background = "red";
+//     }
+//     else{
+//       document.body.style.background = "white";
+
+//     }
+//   });
+//  </script>
+
+
+<!-- ======================================================================================================================= -->
+
+<!-- Events on Form / Input events...... -->
+
+<form action="">
+  <!-- <input type="text" id="myInput"> -->
+</form>
+<script>
+
+  let x = document.getElementById('myInput');
+
+  x.addEventListener('focus' , myFocusFunction);
+  x.addEventListener('blur' , myBlurFunction);
+
+  function myFocusFunction(){
+    x.style.background = "gray";
+
+  }
+  function myBlurFunction(){
+    x.style.background = "white";
+
+  }
+
+  //  We have another event i.e ("change")
+
+  /* In this change event whatever we write in that textbox same text shown on console..
+  This event triggered if we write some text in box then click outside of the box then its change when  */
+
+  // x.addEventListener('change' , function(){
+  //   console.log(this.value);
+  // })
+
+  //  We have another event i.e ("input")
+
+  /* In this input event whatever we write in that textbox same text shown on console (one by one) meane on same imidiate time ..
+  This event triggered if we write some text in box then immediateely after writtening the value shown change or triggered  */
+
+//   x.addEventListener('input' , function(){
+//     console.log(this.value);
+//   })
+ </script> 
+
+
+<!-- --------------------------------------------------------------- -->
+
+<!-- Event Bubbling and Event Capturing in JS -->
+
+
+    <!-- Event Bubbling => In the event bubbling model an event start at the most specific element ans then flows upward toward the least specific element(the document or even window).
+  for ex.. When you  click the button the click event occurs in the following order:
+   <html>
+    <body>
+      <div id="conatiner">
+        <button></button>
+      </div>
+    </body>
+  </html>
+   <!-- In this above DOM ====> Priority wise shown below --> 
+  <!-- 1) button -->
+  <!-- 2) div with an id container -->
+  <!-- 3) body  -->
+  <!-- 4) html -->
+  <!-- 5) document or window--> 
+
+
+<!-- 
+     Event capturing => In the event caputring model an event start at the least specific element ans then flows downward toward the most specific element.
+  for ex.. When you  click the button the click event occurs in the following order:
+  <html>
+    <body>
+      <div id="conatiner">
+        <button></button>
+      </div>
+    </body>
+  </html> 
+  <!-- In this above DOM ====> Priority wise shown below -->
+<!-- 1) document or window -->
+<!-- 2) html -->
+<!-- 3) body   -->
+<!-- 4) div with an id container -->
+<!-- 5) button   -->
+
+<!-- HOW TO USE THIS EVENT :---
+
+  addEventListener(event , function , useCapture);
+
+  ** The defalt value is false which will use the bubbling propogation, when the value is set to true , the event uses the capturing propogation. 
+-->
+
+<style>
+/* body{
+  padding: 100px;
+  background-color: burlywood;
+}
+#container{
+  padding: 50px;
+  background-color: blue;
+} */
+</style>
+
+<!-- <div id="container">
+  <button type="text" id="btn">Click Me !</button>
+</div> -->
+
+<script>
+let div = document.getElementById("container");
+let btn = document.getElementById("btn");
+
+btn.addEventListener('click', btnClicked);
+div.addEventListener('click', divClicked);
+document.body.addEventListener('click',bodyClicked);
+
+function btnClicked(){
+  console.log("button clicked...");
+}
+
+function divClicked(){
+  console.log("div clicked...");
+}
+
+function bodyClicked(){
+  console.log("body clicked...");
+}
+
+</script>
+
+<!-- ------------------------------------------------------------------------------ -->
+
+<!-- Prevent Default event in JS-->
+
+<!-- It help to prevent the defaults methods present under JS  -->
+
+<a href="https://www.google.com" id="anchor">Click Me!</a>
+
+<script>
+  let link = document.getElementById("anchor");
+
+  link.addEventListener('click', function(e){
+    console.log("link clicked...")
+    e.preventDefault();
+  })
+
+</script>
+<!-- ---------------------------------------------------------------------------- -->
+
+<!-- BROWSER OBJECT MODEL----------------- -->
+
+<!-- The Browser Object Model (BOM) is used to interact with the browser. -->
+
+<script>
+// window.alert("Hello JavaScript");
+// OR
+// alert("Hello JavaScript");
+</script>
+
+<!-- Window Object : The window object represent a window in browser an object of window is created automatically by the browser..   -->
+<!-- <script>
+  function msg(){
+    alert("Hello Alert Box");
+  }
+</script>
+<input type="button" value="click" onclick="msg()"> -->
+
+<!-- HOW TO OPEN NEW WINDOW IN OUR BROWSER -->
+
+<!-- For opening window -->
+<!-- <button id="btn">Google</button> -->
+<!-- <button id="btn1">Yahoo</button> -->
+
+<!-- For closing window -->
+<!-- <button id="btn3">Close</button> -->
+
+<script>
+  let btn1 = document.getElementById("btn");
+  let btn2 = document.getElementById("btn1");
+  let btn3 = document.getElementById("btn2");
+
+  let url = "https://www.google.com";
+  let url1 = "https://www.yahoo.com";
+  let features = "height=500,width=500";
+
+  btn1.addEventListener('click', function(){
+    //window.open();  // blank window open....
+
+    let win = window.open(url,'google',features);   //window.open(url,name,features);
+  });
+
+  btn2.addEventListener('click', function(){
+    window.open(url1, 'yahoo' , features);
+  });
+
+
+  // for closing window
+  btn3.addEventListener('click' , function(){
+    //  for closing window before that we have store that window in some variable
+
+    let win = window.open(url,'google',features);
+    win.close();
+
+  })
+</script>
+
+<!-- ========================================================================================================= -->
+
+<!-- Time out and Time Interval in JavaScript -->
+
+<script>
+  // setTimeout(myFunction , 5000);
+
+  // setTimeout used the excution part executes after 5 second..
+
+  // function myFunction(){
+  //   alert("Please Subscribe...");
+  // }
+
+
+  // seInterval---> set in or excute in every selected section
+
+  // setInterval(myFun , 2000);
+  
+  // function myFun(){
+  // document.write("Please Help");
+  // document.write("<br>")
+  // }
+
+  // for stopping this continuous reminder we use clearInrerval function
+
+  
+  
+//    let t1 = setInterval(myFun , 2000);
+  
+//   function myFun(){
+//   console.log("please Help....!")
+//   }
+
+//   let  butt = document.getElementById("btn");
+
+//   butt.addEventListener('click',function(){
+//     clearInterval();
+//   })
+</script>
+ <!-- <button id="btn">Clear Interval</button> -->
+
+<!-- ====================================================================================== -->
+
+<!-- Location Object In JS -->
+
+<script>
+
+  //console.log(location.href);
+  //console.log(location.pathname);
+  //console.log(location.protocol);
+  //console.log(location.port);
+
+  // it gives output like this--->
+
+//   http://127.0.0.1:5500/JAVASCRIPT/index.html
+// /JAVASCRIPT/index.html
+//  http:
+//  5500
+
+</script>
+
+<!-- =========================================================================== -->
+
+<!-- Navigator Object in JS :- Means it gives information & capabilities  about our browser like name , version is it supported or not that like info... -->
+
+<script>
+
+  // console.log(navigator.appName);
+  // console.log(navigator.appVersion);
+  // console.log(navigator.appCodeName);
+  // console.log(navigator.cookieEnabled);
+  // console.log(navigator.userAgent);
+  // console.log(navigator.platform);
+  // console.log(navigator.javaEnabled);
+
+</script>
+
+<!-- ========================================================================================================= -->
+
+<!-- Screen Object in JS : meanse give details about the scrreen-->
+<!-- 
+<script>
+  console.log(screen.height);
+  console.log(screen.width);
+  console.log(screen.colorDepth);
+  console.log(screen.orientation);
+  
+</script> -->
+
+
+
+<!-- =========================================================================================================== -->
+
+    <script>
+      // -----------getElementById in JS ----->
+
+      //let element = document.getElementById("second");
+      //console.log(element); // selected id succsefully
+      //console.log(element.innerHTML);  // print text under list 2
+      // element.innerHTML = "Imp List"; // to change data using innerHTML method
+
+      // ------------getElementsByClassName------>
+
+      // let element = document.getElementsByClassName("cl");
+      //console.log(element);   // selected class succsefully & print
+      //console.log(element.length); // get the length
+
+      //to change the attributof class we use for loop bcz in class it store like array--->
+
+      // for(let i=0; i<element.length;i++){
+
+      //     element[i].innerHTML = "hello";
+      // }
+
+      // if i want to change attibutes of multiple classes
+
+      // let element1 = document.getElementsByClassName("cl pi");
+      // for(let i=0;i<element1.length;i++){
+      //     element1[i].innerHTML = "world..!";
+      // }
+
+      // ---------------------------------------------------------------------
+
+      //NOTE--->  IF WE HAVE MULTIPLE ATTRIBUTE IN (like class , tag  element ) TO PRINT OR CHANGE THEN WE FOR LOOP ------>
+
+      // <!------ getElementsByTagName--------- -->
+
+      // let elm = document.getElementsByTagName("h2");
+      // for(let i=0;i<elm.length;i++){
+      //     elm[i].innerHTML = "hello Guys..!";
+      // }
+
+      // if i want to change only selected H2 elements under the div
+
+      // let div1 = document.getElementById("dd");
+      // let ddd1 = div1.getElementsByTagName("h2");
+      // for(let i=0;i<ddd1.length;i++){
+      //     ddd1[i].innerHTML = "guysss...";
+      // }
+
+      //----------------------------------------------------------------------------
+
+      //  -------------QUERY SELECTOR-------------->
+
+      // let elem = document.querySelector("p.intro");
+      // console.log(elem);
+      //elem.innerHTML = "Hiiiiii"; //// select change only first element u can check he select on first para has class intro bcz queryselecotor has defalt return the first value....If we want all element changeble then we use QuerySelecotrAll
+
+      //let elm = document.querySelectorAll("p.intro");
+      //for(let i=0;i<elm.length;i++){  // again we have multiple class store in terms of array then we for loop for manupliating.. attributes
+      //elm[i].innerHTML = "Oyeeee....."; //---now he has change all p tag under the class intro
+      //}
+
+      //--------------------------------------------------------------------------------
+
+      // TRAVERSING EELEMENTS----------------->
+      // traversing means indirect selection of any tag class or id using their child tag class or id......we can get parents element with the help of their child element....... or vice versa..
+
+      //  Now we can get parent element with the help of their child
+
+      //let elm = document.getElementById("intro");
+      //let prt = elm.parentElement;
+      //prt.innerHTML="<p>hellow </p>"   //-- chnge the innerelement of ul i.e li ---> replace all li into hellow
+      //console.log(prt);    //---- succesfully select parent element
+
+      //  Now we can get child element with the help of their parent
+
+      // let elm = document.getElementById("intro");
+      // let node = elm.firstElementChild;  // we can get first child of ul using this
+      // let node1 = elm.lastElementChild;  // we can get last child oful using this
+      // console.log(node);
+      // console.log(node1);
+
+      //  if i want to select all of child with the help of parent
+
+      // let el = document.getElementById("intro");
+      // let nodeAll = el.children;
+      // console.log(nodeAll);
+
+      // if i want to select their siblings using their siblings..
+
+      // let elmm = document.getElementById("intro");
+      // let sibNode = elmm.previousElementSibling; // we can get previous sibling using this
+      // let sibNode1 = elmm.nextElementSibling;
+      // console.log(sibNode);
+      // console.log(sibNode1);
+
+      //--------------------------------------------------------------------------------
+      //
+
+      // InnerHTML--> Fetch or Change the element---------------------------------
+
+      // let element = document.getElementById("intro");
+      // let content = element.innerHTML;  //-- for fetching o/p
+      // console.log(content);   //----it says-- o/p <p>Hello this is a p tag</p>
+
+      // // for changing innerelement
+      // let element = document.getElementById("intro");
+      // element.innerHTML = "<h2>Hello this is a heading</h2>"
+
+      //--------------------------------------------------------------------------------
+      //
+
+      // Create & Append the element----->
+      // Create ---> create new element
+      // append ---> Add any element not replace or deleting the existing element
+
+      //let elm = document.getElementById("intro");
+
+      //let h1 = document.createElement('h1'); // for creating element
+
+      //h1.className = "try";   // for adding new class
+
+      //h1.id = "intro1";      // for adding new id to HTML element
+
+      // let text = document.createTextNode("This is h1 tag"); //---> for adding text to any element
+
+      //  h1.appendChild(text);
+
+      //  elm.appendChild(h1);   //---> add in elm
+
+      //document.body.appendChild(h1); //---> h1 add in body tag
+
+      // In other way we have property to add text
+
+      // h1.textContent = "content added";
+
+      // h1.innerHTML =  "this also same contnt";
+
+      // h1.innerText = "this alsoo same okk";
+
+      // How to read the text --> add some id in that element
+
+      //let para = document.getElementById("p1");
+      //console.log(para.textContent);   //----> o/p --> Hello This is a p tag
+      //console.log(para.innerHTML);     //----> o/p --> Hello This is a p tag
+      //console.log(para.innerText);     //----> o/p --> Hello This is a p tag
+
+      // Add new List in the list item...for this we have
+      // 3 steps to add
+      /*
+1)Select element by using id or class
+2)craete element 
+3)add new something in that element
+3)append...**Means add element to the last**
+*/
+
+      // let list = document.getElementById("lists");
+      // let item = document.createElement("li");
+      // item.textContent = "list 5";
+      // list.appendChild(item); //-- new list 5 added succssflly
+
+      //  in some cases if we want to add new list item in between any list item or any position may top or middle then what we do.....
+
+      // let list = document.getElementById("lists");
+      // let item = document.createElement("li");
+      // item.textContent = "new list item ";
+
+      // for selecting any position firstly we have to create one variable for storing
+      // let position = list.firstElementChild; // for adding at top first child of ul
+      // list.insertBefore(item,position);
+
+      //let position1 = list.firstElementChild.nextElementSibling; // for adding in btw list 1 & list 2 of ul
+      //list.insertBefore(item,position1);
+
+      // let position2 = list.firstElementChild.nextElementSibling.nextElementSibling; // for adding in btw list 2 & list 3 of ul
+      // list.insertBefore(item,position2);
+
+      // let position3 = list.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling; // for adding in btw list 3 & list 4 of ul
+      //list.insertBefore(item,position3);
+
+      // But if we have add element under the body
+
+      // let parent = document.body;
+
+      // let item = document.createElement("h2");
+      // item.textContent = "This is a new heading";
+
+      // let list = document.getElementById("lists");
+
+      // parent.insertBefore(item , list);
+    </script>
+  </body>
+</html>
